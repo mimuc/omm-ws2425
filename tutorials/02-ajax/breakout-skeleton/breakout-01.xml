@@ -1,0 +1,10 @@
+<books>
+	<book>
+	    <title>XML Developer's Guide</title>
+	    <authors>
+	    	<author name="John Doe" email="john.doe@sth.org" />
+	    	<author name="Max Mustermann" email="max@mustermail.com" />
+	    </authors>
+	    <price>44.95</price>
+	</book>	
+</books>

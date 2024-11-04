@@ -2,69 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Breakout 02: GitHub Followers</title>
+  <title>Breakout 01: post function</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="The OMM team">
 </head>
 <body>
 
-<form id="get-form">
-  <input type="text" placeholder="username" name="myuser">
-  <button type="submit">Load my followees!</button>
-</form>
-
-<form id="delete-form">
-  <input type="text" placeholder="username" name="unfollowuser">
-  <button type="submit">Unfollow</button>
+<form>
+  <input type="text" placeholder="username" name="user">
+  <button type="submit">Go!</button>
 </form>
 
 <div id="output"></div>
-  
+
 <script>
 
-  function getJSON(method, url, callback, params) {
-    fetch(url, {
-      method: method, // *GET, POST, PUT, DELETE, etc.
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer tokengoeshere' // TODO replace this with your own token
-      },      
-      body: params // body data type must match "Content-Type" header
-    }).then(res => {
-      res.json().then(json => {
-        alert(JSON.stringify(json))
-      })
-    });
+  function postJSON(url, callback, params) {
+    var req = new XMLHttpRequest();
+    req.open('POST', url);
+    req.setRequestHeader('Content-type', 'application/json');
+    req.onreadystatechange = function() {
+      if (req.readyState === 4) {
+        callback(JSON.parse(req.responseText));
+      }
+    };
+    req.send(params);
   }
 
-
-  var getForm = document.querySelector('#get-form');
-  var deleteForm = document.querySelector('#delete-form');
-  var myUserInput = document.querySelector('input[name=myuser]');
-  var otherUserInput = document.querySelector('input[name=unfollowuser]');
+  var form = document.querySelector('form');
+  var userInput = document.querySelector('input[name=user]');
   var output = document.querySelector('#output');
 
-  getForm.addEventListener('submit', function(e) {
+  form.addEventListener('submit', function(e) {
+    var params;
     e.preventDefault(); // don't submit at this point.
 
-    
-    getJSON('GET',`https://api.github.com/users/${myUserInput.value}/following`, function(users) {
-      output.innerHTML = '';
-      users.forEach(user => {
-        output.innerHTML += `<p>${user.login}</p>`;
-      });     
-    }, null)
-  });
-  
-
-  deleteForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // don't submit at this point.
-
-    // with params!   
-    getJSON('DELETE',`https://api.github.com/user/following/${otherUserInput.value}`, function(res) {
-      console.log(res.status);
-    }, null)
+    // with params!
+    params = JSON.stringify({user: userInput.value});
+    postJSON('http://httpbin.org/post', function(res) {
+      output.innerHTML = res.json.user;
+    }, params)
   });
 </script>
 
