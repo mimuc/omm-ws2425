@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data retrieved from MongoDB music database</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Data retrieved from MongoDB music database</h1>
+    <table id="table" >
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Runtime</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% songlist.forEach( (song) => { %>
+            <tr>
+                <td><%= song.code %></td>
+                <td><%= song.title %></td>
+                <td><%= song.artist %></td>
+                <td><%= song.album %></td>
+                <td><%= song.runtime %></td>
+            </tr>
+          <% }) %>
+         </tbody>
+    </table>
+</body>
+</html>
