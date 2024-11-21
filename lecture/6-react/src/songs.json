@@ -1,0 +1,51 @@
+[
+  {
+    "code": "1",
+    "title": "One",
+    "artist": "U2",
+    "album": "The Complete U2",
+    "runtime": "272"
+  },
+  {
+    "code": "2",
+    "title": "In the End",
+    "artist": "Linkin Park",
+    "album": "Hybrid Theory",
+    "runtime": "216"
+  },
+  {
+    "code": "3",
+    "title": "Wheel in the Sky",
+    "artist": "Journey",
+    "album": "Infinity",
+    "runtime": "252"
+  },
+  {
+    "code": "4",
+    "title": "Lady in Black",
+    "artist": "Uriah Heep",
+    "album": "Lady in Black",
+    "runtime": "281"
+  },
+  {
+    "code": "5",
+    "title": "Smoke on the Water",
+    "artist": "Deep Purple",
+    "album": "Machine Head",
+    "runtime": "378"
+  },
+  {
+    "code": "6",
+    "title": "Analog Man",
+    "artist": "Joe Walsh",
+    "album": "Analog Man",
+    "runtime": "243"
+  },
+  {
+    "code": "7",
+    "title": "Sixteen Bars",
+    "artist": "Ron Jambo",
+    "album": "Mojo Dojo",
+    "runtime": "207"
+  }
+]

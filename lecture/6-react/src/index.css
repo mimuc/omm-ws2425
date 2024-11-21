@@ -1,0 +1,35 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+.songtable {
+  border-collapse: collapse;
+  text-align:left;
+}
+
+.songtable td:not(.detBtn) {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.detBtn {
+  padding-left: 10px;
+}
+
+.detailsVisible {
+  visibility: visible;
+}
+
+.detailsHidden {
+  visibility: hidden;
+}
+
+#details {
+  padding-top: 24px;
+}
+
+h1#details {
+  font-size: 20px;
+  padding-bottom: 10 px;
+}
