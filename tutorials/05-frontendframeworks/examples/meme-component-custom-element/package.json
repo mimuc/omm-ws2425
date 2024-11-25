@@ -1,0 +1,7 @@
+{
+  "name": "meme-component-custom-element",
+  "version": "1.0.0",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.6.0"
+  }
+}
