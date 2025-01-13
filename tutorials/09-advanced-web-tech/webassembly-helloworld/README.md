@@ -1,0 +1,1 @@
+emcc heavycalculation.c -o calculator.js

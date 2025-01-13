@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+    <title>High Performance Calculator</title>
+    <script src="calculator.js"></script>
+
+    <script>
+        function calculate_wasm() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+
+            a = Math.floor(parseFloat(a));
+            b = Math.floor(parseFloat(b));
+
+            result = Module._multiply(a, b);
+            console.log(`${a} + ${b} = ${result}`);
+
+            document.getElementById("result_container").innerText = result
+        }
+    </script>
+</head>
+
+<body>
+<h1>WebAssembly in C</h1>
+<div style="display: inline-block;">
+    <input id="a" type="number" />
+    <label>*</label>
+    <input id="b" type="number" />
+    <button id="run_button" onclick="calculate_wasm()">=</button>
+    <label id="result_container"></label>
+</div>
+</body>
+</html>  <!-- https://medium.com/vacatronics/how-to-write-a-webassembly-app-in-c-c-6c560438a844 -->
