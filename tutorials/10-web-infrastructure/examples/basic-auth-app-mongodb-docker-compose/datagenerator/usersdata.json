@@ -1,0 +1,8 @@
+[{
+  "_id": "1",
+  "username": "student",
+  "basicauthtoken": "Basic c3R1ZGVudDpvbW1pc2F3ZXNvbWU=",
+  "age": 23,
+  "faculty": 16,
+  "fieldofstudy": "human computer interaction"
+}]

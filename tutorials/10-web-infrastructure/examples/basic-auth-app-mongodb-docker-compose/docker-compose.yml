@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+  nodeapp:
+    build:
+      context: ./nodeapp
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URI=mongo:27017
+    ports:
+      - "80:3000"
+    links:
+      - mongo
+  dataimport:
+    build:
+      context: ./datagenerator
+      dockerfile: Dockerfile
+    links:
+      - mongo
