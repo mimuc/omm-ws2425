@@ -1,0 +1,7 @@
+{
+  "name": "sample-http",
+  "version": "0.0.1",
+  "dependencies": {
+    "@google-cloud/functions-framework":"3.4.5"
+  }
+}
